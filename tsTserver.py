@@ -17,6 +17,6 @@ while True:
         data = tcpCliSocket.recv(BUFSIZE)
         if not data:
             break
-        tcpCliSocket.send('[%s]%s'%(bytes(ctime(), 'utf-8'), data))
+        tcpCliSocket.send(data+b' time now:'+bytes(ctime(), 'utf-8'))
     tcpCliSocket.close()
 tcpSerSocket.close()
